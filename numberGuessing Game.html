@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>猜數字遊戲</title>
+</head>
+<body>
+    <div id="result">
+    	<h1>113306085_Lab3_Number Guessing Game</h1>
+    </div>
+
+    <script type="text/javascript">
+        var answer = Math.floor(Math.random() * 100) + 1;
+        var count = 7; 
+        var start = 1, end = 100;
+        var resultDiv = document.getElementById("result");
+
+        while (true) {
+            var input = window.prompt(`請輸入${start}~${end}之間的數字\n還剩下${count}次機會`);
+
+            if (input < start || input > end || isNaN(input)) {
+                alert("請輸入有效範圍內的數字！（不能選擇範圍的上下限）");
+                continue;
+            }
+
+            if (input == answer) {
+                alert("好棒你答對了！");
+                resultDiv.innerHTML = "<img src=\"correct.jpg\">";
+                break;
+            }
+
+            count--; 
+
+            if (count === 0) {
+                alert(`你好爛，正確答案是${answer}`);
+                resultDiv.innerHTML = "<img src=\"wrong.jpg\">"; 
+                break; 
+            }
+
+            if (input < answer) {
+                start = input;
+            } else {
+                end = input;
+            }
+        }
+    </script>
+</body>
+</html>
