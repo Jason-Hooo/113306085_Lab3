@@ -6,9 +6,7 @@
     <title>猜數字遊戲</title>
 </head>
 <body>
-    <div id="result">
-    	<h1>113306085_Lab3_Number Guessing Game</h1>
-    </div>
+    <div id="result"></div>
 
     <script type="text/javascript">
         var answer = Math.floor(Math.random() * 100) + 1;
@@ -26,7 +24,7 @@
 
             if (input == answer) {
                 alert("好棒你答對了！");
-                resultDiv.innerHTML = "<img src=\"correct.jpg\">";
+                resultDiv.innerHTML = "<h1>113306085_Lab3_Number Guessing Game</h1><img src=\"correct.jpg\">";
                 break;
             }
 
@@ -34,7 +32,7 @@
 
             if (count === 0) {
                 alert(`你好爛，正確答案是${answer}`);
-                resultDiv.innerHTML = "<img src=\"wrong.jpg\">"; 
+                resultDiv.innerHTML = "<h1>113306085_Lab3_Number Guessing Game</h1><img src=\"wrong.jpg\">"; 
                 break; 
             }
 
